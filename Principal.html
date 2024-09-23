@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema De Calificaciones</title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+</head>
+<body class="montserrat">
+    <div id="banner">
+        <div class="imagenbanner">
+            <img src="Recursos/BANNERF.png" alt="">
+        </div>
+        <div>
+            <h1>CAPTURA DE CALIFICACIONES</h1>
+        </div>
+    </div>
+    <div id="body">
+        <div class="ingreso-alumno">
+            <label for="" class="Sp">Ingresa nombre Alumno</label>
+            <input type="text" class="montserrat Sp">
+            <input type="button" value="Insertar Alumno" class="montserrat Bp">
+            <input type="button" value="Limpiar Alumno" class="montserrat Bp">
+        </div>
+        <div class="ingreso-calificaciones">
+            <label for="" class="Sp">Competencias:</label>
+            <select name="" id="cmbCompetencias" class="montserrat">
+                <option value="">C1</option>
+                <option value="">C2</option>
+                <option value="">C3</option>
+                <option value="">C4</option>
+                <option value="">C5</option>
+                <option value="">C6</option>
+                <option value="">C7</option>
+                <option value="">C8</option>
+                <option value="">C9</option>
+                <option value="">C10</option>
+            </select>
+            <label for="" value="TallerdeInvestigacion" class="Sp">Taller de Investigacion II</label>
+            <input type="text" class="montserrat" class="Sp">
+            <label for="" value="ProgramacionWeb" class="Sp">Programacion Web</label>
+            <input type="text" class="montserrat" class="Sp">
+            <label for="" value="InteligenciaArtificial" class="Sp">Inteligencia Artificial</label>
+            <input type="text" class="montserrat" class="Sp">
+            <label for="" value="ProgramacionLogicayFuncional" class="Sp">Programacion Logica y Funcional</label>
+            <input type="text" class="montserrat" class="Sp">
+            <label for="" value="SistemasProgramables" class="Sp">Sistemas Programables</label>
+            <input type="text" class="montserrat" class="Sp">
+            <label for="" value="ConmutacionyEnrutamientodeRedesdeDatos" class="Sp">Conmutacion y Enrutamiento de Redes de Datos</label>
+            <input type="text" class="montserrat" class="Sp">
+        </div>
+        <div class="combo-alumnos">
+            <h4>Selecciona Alumno:</h4>
+            <select name="" id="cmbAlumnos" class="Cp"></select>
+        </div>
+        <div class="tabla-calificaciones">
+            <table class="table table-condensed table-hover" cellspacing="0" cellpadding="0" rules="all" id="MainContent_gridview1" style="border-width:1px;border-style:None;width:100%;border-collapse:collapse;">
+                <tr>
+                    <th scope="col">Asignatura</th><th scope="col">C1</th><th scope="col">C2</th><th scope="col">C3</th><th scope="col">C4</th><th scope="col">C5</th><th scope="col">C6</th><th scope="col">C7</th><th scope="col">C8</th><th scope="col">C9</th><th scope="col">C10</th>
+                </tr><tr>
+                    <td>Taller de Investigacion II</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+                </tr><tr>
+                    <td>Programacion Web</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+                </tr><tr>
+                    <td>Inteligencia Artificial</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+                </tr><tr>
+                    <td>Programacion Logica y Funcional</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+                </tr><tr>
+                    <td>Sistemas Programables</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+                </tr><tr>
+                    <td>Conmutacion y Enrutamiento de Redes de Datos</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="promedio-general">
+            <h2>PROMEDIO GENERAL</h2>
+            <label for="">Taller de Investigacion II</label>
+            <label for="">Programacion Web</label>
+            <label for="">Programacion Logica y Funcional</label>
+            <label for="">Sistemas Programables</label>
+            <label for="">Conmutacion y Enrutamiento de Redes de Datos</label>
+            
+        </div>
+    </div>
+
+    <footer>
+        <hr>
+        <h3>CREDITOS SITESCI</h3>
+        <hr>
+    </footer>
+    
+</body>
+</html>
