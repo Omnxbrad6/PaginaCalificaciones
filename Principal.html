@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema De Calificaciones</title>
     <link rel="stylesheet" href="CSS/Estilos.css">
+    <script src="JS/Funciones.js"></script>
+    <link rel="icon" href="Recursos/icono-sistema.ico" type="image/x-icon">
 </head>
 <body class="montserrat">
     <div id="banner">
         <div class="imagenbanner">
-            <img src="Recursos/BANNERF.png" alt="">
+            <img src="Recursos/Logo.jpg" alt="" width="400px" height="250px">
         </div>
         <div>
             <h1>CAPTURA DE CALIFICACIONES</h1>
@@ -18,78 +20,118 @@
     <div id="body">
         <div class="ingreso-alumno">
             <label for="" class="Sp">Ingresa nombre Alumno</label>
-            <input type="text" class="montserrat Sp">
-            <input type="button" value="Insertar Alumno" class="montserrat Bp">
-            <input type="button" value="Limpiar Alumno" class="montserrat Bp">
+            <input type="text" class="montserrat Sp" id="nombreAlumno">
+            <input type="button" value="Insertar Alumno" class="montserrat Bp" onclick="aAlumno()">
+            <input type="button" value="Limpiar Alumno" class="montserrat Bp" onclick="limpiarAlumno()">
         </div>
         <div class="ingreso-calificaciones">
+            <h2 id="calificacionesNombre">Ingresa Calificaciones para: </h2>
             <label for="" class="Sp">Competencias:</label>
             <select name="" id="cmbCompetencias" class="montserrat">
-                <option value="">C1</option>
-                <option value="">C2</option>
-                <option value="">C3</option>
-                <option value="">C4</option>
-                <option value="">C5</option>
-                <option value="">C6</option>
-                <option value="">C7</option>
-                <option value="">C8</option>
-                <option value="">C9</option>
-                <option value="">C10</option>
+                <option value="Selecciona">Selecciona una competencia</option>
+                <option value="1">C1</option>
+                <option value="2">C2</option>
+                <option value="3">C3</option>
+                <option value="4">C4</option>
+                <option value="5">C5</option>
+                <option value="6">C6</option>
+                <option value="7">C7</option>
+                <option value="8">C8</option>
+                <option value="9">C9</option>
+                <option value="10">C10</option>
             </select>
-            <label for="" value="TallerdeInvestigacion" class="Sp">Taller de Investigacion II</label>
-            <input type="text" class="montserrat" class="Sp">
+            <label for="" value="TallerdeInvestigacion  " class="Sp">Taller de Investigacion II</label>
+            <input type="text" class="montserrat" id="txtTallerdenvestigacion">
             <label for="" value="ProgramacionWeb" class="Sp">Programacion Web</label>
-            <input type="text" class="montserrat" class="Sp">
+            <input type="text" class="montserrat" id="txtProgramacionWeb">
             <label for="" value="InteligenciaArtificial" class="Sp">Inteligencia Artificial</label>
-            <input type="text" class="montserrat" class="Sp">
+            <input type="text" class="montserrat" id="txtInteligenciaArtificial">
             <label for="" value="ProgramacionLogicayFuncional" class="Sp">Programacion Logica y Funcional</label>
-            <input type="text" class="montserrat" class="Sp">
+            <input type="text" class="montserrat" id="txtProgramacionLogicaFuncioanl">
             <label for="" value="SistemasProgramables" class="Sp">Sistemas Programables</label>
-            <input type="text" class="montserrat" class="Sp">
+            <input type="text" class="montserrat" id="txtSistemasProgramables">
             <label for="" value="ConmutacionyEnrutamientodeRedesdeDatos" class="Sp">Conmutacion y Enrutamiento de Redes de Datos</label>
-            <input type="text" class="montserrat" class="Sp">
+            <input type="text" class="montserrat" id="txtConmutacionRedes">
+            <input type="button" class="Sp" value="Guardar" onclick="guardarAlumno()">
         </div>
         <div class="combo-alumnos">
             <h4>Selecciona Alumno:</h4>
-            <select name="" id="cmbAlumnos" class="Cp"></select>
+            <select name="" id="cmbAlumnos" class="Cp" onchange="seleccionAlumno()">
+                <option value="Selecciona">Selecciona un alumno</option>
+            </select>
         </div>
         <div class="tabla-calificaciones">
-            <table class="table table-condensed table-hover" cellspacing="0" cellpadding="0" rules="all" id="MainContent_gridview1" style="border-width:1px;border-style:None;width:100%;border-collapse:collapse;">
-                <tr>
-                    <th scope="col">Asignatura</th><th scope="col">C1</th><th scope="col">C2</th><th scope="col">C3</th><th scope="col">C4</th><th scope="col">C5</th><th scope="col">C6</th><th scope="col">C7</th><th scope="col">C8</th><th scope="col">C9</th><th scope="col">C10</th>
-                </tr><tr>
-                    <td>Taller de Investigacion II</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-                </tr><tr>
-                    <td>Programacion Web</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-                </tr><tr>
-                    <td>Inteligencia Artificial</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-                </tr><tr>
-                    <td>Programacion Logica y Funcional</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-                </tr><tr>
-                    <td>Sistemas Programables</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-                </tr><tr>
-                    <td>Conmutacion y Enrutamiento de Redes de Datos</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
-                </tr>
+            <h2 id="alumnoSeleccionado">Alumno: </h2>
+            <table class="table table-condensed table-hover" cellspacing="0" cellpadding="0" rules="all" id="tabla-calificaciones-alumno" style="border-width:1px;border-style:None;width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th scope="col">Asignatura</th>
+                        <th scope="col">C1</th><th scope="col">C2</th><th scope="col">C3</th><th scope="col">C4</th><th scope="col">C5</th>
+                        <th scope="col">C6</th><th scope="col">C7</th><th scope="col">C8</th><th scope="col">C9</th><th scope="col">C10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="rowTallerInvestigacion">
+                        <td>Taller de Investigación II</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr id="rowProgramacionWeb">
+                        <td>Programación Web</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr id="rowInteligenciaArtificial">
+                        <td>Inteligencia Artificial</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr id="rowProgramacionLogicaFuncional">
+                        <td>Programación Lógica y Funcional</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr id="rowSistemasProgramables">
+                        <td>Sistemas Programables</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr id="rowConmutacionRedes">
+                        <td>Conmutación y Enrutamiento de Redes de Datos</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </tbody>
             </table>
 
         </div>
 
         <div class="promedio-general">
             <h2>PROMEDIO GENERAL</h2>
-            <label for="">Taller de Investigacion II</label>
-            <label for="">Programacion Web</label>
-            <label for="">Programacion Logica y Funcional</label>
-            <label for="">Sistemas Programables</label>
-            <label for="">Conmutacion y Enrutamiento de Redes de Datos</label>
-            
+            <label for="">Taller de Investigacion II: <span id="promedioTallerInvestigacion"></span></label>
+            <br>
+            <label for="">Programacion Web: <span id="promedioProgramacionWeb"></span></label>
+            <br>
+            <label for="">Inteligencia Artificial: <span id="promedioInteligenciaArtificial"></span></label>
+            <br>
+            <label for="">Programacion Logica y Funcional: <span id="promedioProgramacionLogicaFuncional"></span></label>
+            <br>
+            <label for="">Sistemas Programables: <span id="promedioSistemasProgramables"></span></label>
+            <br>
+            <label for="">Conmutacion y Enrutamiento de Redes de Datos: <span id="promedioConmutacionRedes"></span></label>
+            <br>
+            <h3>Promedio General de Todas las Materias: <span id="promedioGeneral"></span></h3>
+            <br> 
+            <input type="button" value="Calcular Promedio" onclick="promedioGeneral()">
         </div>
-    </div>
+        
 
-    <footer>
-        <hr>
-        <h3>CREDITOS SITESCI</h3>
-        <hr>
-    </footer>
-    
+        <footer class="footer">
+            <p style="text-align: center">&copy; 2024 - Desarrollado por Mandujano Angeles Omar Uriel </p>
+            <p style="text-align: center">&copy; Estudiante De Ingeniería en Sistemas Computacionales</p>
+            <p style="text-align: center">Derechos Reservados</p>
+            <div style="text-align: center;">
+                <a href="https://www.facebook.com/" target="_blank" style="margin: 0 10px;">
+                    <img src="Recursos/facebook.png" alt="Facebook" width="64px">
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" style="margin: 0 10px;">
+                    <img src="Recursos/instagram.png" alt="Instagram" width="64px">
+                    <span>Instagram</span>
+                </a>
+                <a href="https://twitter.com/?lang=es" target="_blank" style="margin: 0 10px;">
+                    <img src="Recursos/x.png" alt="X" width="64px">
+                    <span>X</span>
+                </a>
+            </div>
+        </footer>        
 </body>
 </html>

@@ -18,14 +18,14 @@ h1, h2, h3{
 
 .table-condensed tr th {
     border: 0;
-    color: white;
-    background-color: blue;
+    color: black;
+    background-color: aqua;
 }
 
 .table td, .table th {
     padding: .75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid #e6dede;
 }
 
 .promedio-general{
@@ -35,14 +35,18 @@ h1, h2, h3{
 
 .Sp{
     width: 50%;
+    margin: 10px;
 }
 
 .Bp{
     width: 10%;
+    margin: 5px;
 }
+
 
 .Cp{
     width: 100%;
+    margin: 5px;
 }
 
 .ingreso-calificaciones{
@@ -60,6 +64,16 @@ h1, h2, h3{
     align-items: center;
 }
 
-.tabla-calificaciones{
+.tabla-calificaciones{                      
     margin-top: 5%;
 }
+
+.footer {
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column; /* Para alinear los elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+    padding: 20px; /* Espaciado interno */
+}
+
